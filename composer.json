@@ -1,0 +1,33 @@
+{
+    "name": "cooper/piaotong",
+    "description": "票通SDK",
+    "keywords": [
+        "piaotong",
+        "piaotong-sdk",
+        "sdk"
+    ],
+    "type": "package",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cooper",
+            "email": "15731208870@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "guzzlehttp/guzzle": "^6.3",
+        "ext-openssl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cooper\\Piaotong\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "mockery/mockery": "^1.6"
+    }
+}
