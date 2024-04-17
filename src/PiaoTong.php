@@ -2,6 +2,7 @@
 
 namespace Cooper\Piaotong;
 
+use Cooper\Piaotong\Contracts\NotifyInterface;
 use Cooper\Piaotong\Contracts\ServiceInterface;
 use Cooper\Piaotong\Exceptions\InvalidGatewayException;
 use Cooper\Piaotong\Supports\Str;
@@ -38,6 +39,10 @@ class PiaoTong
                 return $app->send(array_filter($arguments[0], function ($value) {
                     return '' !== $value && !is_null($value);
                 }));
+            }
+
+            if ($app instanceof NotifyInterface) {
+                return $app->parse($arguments[0]);
             }
         }
         throw new InvalidGatewayException("Send Gateway [{$service}] Not Exists");
